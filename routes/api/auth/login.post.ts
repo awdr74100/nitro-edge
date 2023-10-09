@@ -26,7 +26,12 @@ export default eventHandler(async (event) => {
       },
     });
 
-    if (!user) throw new Error('not found user')
+    if (!user) throw new Error("not found user");
+
+    if (typeof globalThis.EdgeRuntime !== "string") {
+      console.log(globalThis.EdgeRuntime);
+      // dead-code elimination is enabled for the code inside this block
+    }
 
     // console.log(user);
 
