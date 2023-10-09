@@ -28,7 +28,7 @@ export default eventHandler(async (event) => {
 
     if (!user) throw new Error("user not found");
 
-    if (user.password !== password) throw new Error("password not correct")
+    if (user.password !== password) throw new Error("password not correct");
 
     if (typeof globalThis.EdgeRuntime !== "string") {
       console.log(globalThis.EdgeRuntime);
@@ -38,7 +38,7 @@ export default eventHandler(async (event) => {
 
     // console.log(user);
 
-    return { ok: true, user };
+    return { ok: true, user, msg: globalThis.EdgeRuntime };
   } catch (error) {
     // console.log(error);
 
