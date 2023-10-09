@@ -26,10 +26,13 @@ export default eventHandler(async (event) => {
       },
     });
 
-    if (!user) throw new Error("not found user");
+    if (!user) throw new Error("user not found");
+
+    if (user.password !== password) throw new Error("password not correct")
 
     if (typeof globalThis.EdgeRuntime !== "string") {
       console.log(globalThis.EdgeRuntime);
+
       // dead-code elimination is enabled for the code inside this block
     }
 
