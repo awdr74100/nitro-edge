@@ -4,10 +4,12 @@ import "dotenv/config";
 export default {
   schema: "./db/schema.ts",
   out: "./migrations",
-  driver: "pg",
+  driver: "turso",
   dbCredentials: {
-    connectionString:
-      process.env.NITRO_LOCAL_DATABASE_URL ??
-      process.env.NITRO_NEON_DATABASE_URL,
+    url: process.env.NITRO_TURSO_DATABASE_URL,
+    authToken: process.env.NITRO_TURSO_AUTH_TOKEN,
+    // connectionString:
+    //   process.env.NITRO_LOCAL_DATABASE_URL ??
+    //   process.env.NITRO_NEON_DATABASE_URL ?? process.env.NITRO_TURSO_DATABASE_URL,
   },
 } satisfies Config;

@@ -5,10 +5,12 @@
     "dev": "nitropack dev",
     "build": "nitropack build",
     "preview": "node .output/server/index.mjs",
-    "drizzle:push": "drizzle-kit push:pg"
+    "drizzle:push": "drizzle-kit push:sqlite"
   },
   "dependencies": {
+    "@libsql/client": "^0.3.5",
     "@neondatabase/serverless": "^0.6.0",
+    "better-sqlite3": "^8.7.0",
     "drizzle-orm": "^0.28.6",
     "nitropack": "latest",
     "postgres": "^3.3.5",
